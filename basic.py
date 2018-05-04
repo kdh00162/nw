@@ -35,7 +35,7 @@ print data.index("hi")
 user = {}
 user["me"] = {'age' : 30, 'address': 'deajeon'}
 user['you'] = {'age':22, 'address': 'seoul'}
-# 사전출력
+# 사전 출력
 print user
 # 사전 데이터 검색 키 활용
 print user['me']
@@ -60,9 +60,9 @@ else:
     print "????"   
 
 # 함수 
-def addition(numbers):         #함수는 def로 만들수있음 : 함수안에 속해있다라고 표시 스코프를 가진다. 함수는 스코프안에서만 활용가능 
-    result = 0                  #하고 쓰는건 주석을단다고함 
-    for number in numbers:      # 모든함수가 인자를 필요로하진않지만number가 인자
+def addition(numbers):         #함수는 def로 만들 수 있음 : 함수 안에 속해있다라고 표시 스코프를 가진다. 함수는 스코프 안에서만 활용가능 
+    result = 0                  #하고 쓰는건 주석을 단다고 함 
+    for number in numbers:      # 모든 함수가 인자를 필요로 하진 않지만 number가 인자
         result += number 
     return result
  
@@ -85,11 +85,11 @@ import subprocess
 
 def shell():
     while True:
-        cmd = raw_input('>>> ')                 # pass는 문제가생겼을때 넘어갈수있게 해준것 브레이크해서 나갈수있게 "bye~"나오게 설정
+        cmd = raw_input('>>> ')                 # pass는 문제가 생겼을때 넘어갈수있게 해준것 브레이크해서 나갈수있게 "bye~"나오게 설정
         if cmd == 'id':
             if platform.system() == 'Windows':
                 print os.environ.get('USERNAME')    #파이썬은 윈도우 리눅스 둘다동작 윈도우즈에는 있는값이 리눅스에는 없을수있음 동일하지만 다른방식이기 때문(86,87줄)
-            else:                                     #윈도우는 첫번째글자를 대문자로 해야 인식
+            else:                                     #윈도우는 첫번째 글자를 대문자로 해야 인식
                 print os.getenv('USER')
         elif cmd == 'pwd': 
             print os.getcwd() 
@@ -127,4 +127,4 @@ html = res.read()
 # re 모듈 (정규표현식)을 이용한 패턴매칭  [정규표현식 - 많은데이터중에 내가 원하는것을 찾기위함 ex)127.0.0.1/31337 \d+\.\d+\.\d+\.\d+\/\d+ 여기에 플러스를 붙이면 하나또는 그이상 d가 숫자를 의미]
 ipaddress, port = re.findall(r"\d+\.\d+\.\d+\.\d+\/\d+", html)[0].split('/')       #패턴데이터 앞에는 r을 붙여줌을 권장
 print "ip", ipaddress, "port:", port    
-
+# 파이썬 도움말 이용
