@@ -42,7 +42,7 @@ def logout():
 @app.route("/")                                                   
 def hello():
     if 'id' in session: # 세션에 id라는 애가 있으면 로그인을ㄴ 하겠다 
-        return redirect ('/hello')#u'로그인 완료. %s<a href="/logout">로그아웃</a>' % escape(session['id'])#한글을 쓰고싶다면 소문자 u를 입력 
+        return redirect ('hello.html')#u'로그인 완료. %s<a href="/logout">로그아웃</a>' % escape(session['id'])#한글을 쓰고싶다면 소문자 u를 입력 
     return render_template("login.html")
 
 @app.route("/name")                       #/이름 하고 주소창에 127.0.0.1:5000(사이트)/name에 들어가면 밑에 입력한 글자가 나옴-
