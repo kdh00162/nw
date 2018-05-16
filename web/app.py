@@ -63,7 +63,7 @@ def login():
                 #로그인이 실패한경우 
                 return "<script>alert('아이디 또는 비밀번호를 다시 확인하세요. 등록되지 않은 아이디이거나, 아이디 또는 비밀번호를 잘못 입력하셨습니다.');history.back(-1);</script>"
         if 'id' in session:
-            return redirect('/hello.html')#("/")
+            return redirect('/')#("/")
         return render_template("login.html")       
 
 @app.route("/join", methods=["GET", "POST"])                             #로그인 만들고 성공  
