@@ -42,7 +42,7 @@ def logout():
 @app.route("/")                                                   
 def hello():
     if 'id' in session: # 세션에 id라는 애가 있으면 로그인을ㄴ 하겠다 
-        return redirect ('/hello.html')#u'로그인 완료. %s<a href="/logout">로그아웃</a>' % escape(session['id'])#한글을 쓰고싶다면 소문자 u를 입력
+        return redirect ('/hello' "<script>alert('로그인이 완료되었습니다.');history.back(-1);</script>")#u'로그인 완료. %s<a href="/logout">로그아웃</a>' % escape(session['id'])#한글을 쓰고싶다면 소문자 u를 입력 
     return render_template("login.html")
 
 @app.route("/name")                       #/이름 하고 주소창에 127.0.0.1:5000(사이트)/name에 들어가면 밑에 입력한 글자가 나옴-
@@ -58,7 +58,7 @@ def login():
             if query_db(sql, one=True):
                 #로그인이 성공한경우
                 session['id'] = id
-                return redirect("/")
+                return redirect("/hello")
             else:
                 #로그인이 실패한경우 
                 return "<script>alert('아이디 또는 비밀번호를 다시 확인하세요. 등록되지 않은 아이디이거나, 아이디 또는 비밀번호를 잘못 입력하셨습니다.');history.back(-1);</script>"
