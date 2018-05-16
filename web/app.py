@@ -58,7 +58,7 @@ def login():
             if query_db(sql, one=True):
                 #로그인이 성공한경우
                 session['id'] = id
-                return redirect("/hello")
+                return redirect("/")
             else:
                 #로그인이 실패한경우 
                 return "<script>alert('아이디 또는 비밀번호를 다시 확인하세요. 등록되지 않은 아이디이거나, 아이디 또는 비밀번호를 잘못 입력하셨습니다.');history.back(-1);</script>"
